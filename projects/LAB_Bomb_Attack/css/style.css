@@ -1,0 +1,75 @@
+/* --- PALETA DE COLORES --- */
+:root {
+            --color-dark: #033540;
+            --color-teal: #015366;
+            --color-muted: #63898c;
+            --color-light: #a7d1d2;
+            --color-pale: #e0f4f5;
+        }
+
+        body {
+            background-color: var(--color-pale);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            color: var(--color-dark);
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: var(--color-teal);
+            margin-bottom: 40px;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            grid-gap: 50px; 
+            padding: 20px;
+        }
+
+        /* --- ESTILO BASE DE LAS BOMBAS --- */
+        .bomb {
+            width: 150px;
+            height: 150px;
+            background-color: var(--color-muted);
+            border-radius: 15px;
+            background-image: url('../img/bomb.png'); /* Icono Bomba */
+            background-size: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .bomb:hover {
+            transform: scale(1.05);
+            background-color: var(--color-teal);
+        }
+
+        /* --- EFECTO EXPLOSIÓN (8 de 9) --- */
+        .bomb:hover {
+            background-image: url('../img/explode.png'); /* Icono Explosión */
+        }
+
+
+        .bomb:nth-child(5):hover {
+            background-image: url('../img/fire-extinguisher.png'); 
+            background-color: var(--color-light);
+        }
+
+        /* EXTRA: Visibilidad de mensajes */
+        .bomb p {
+            opacity: 0;
+            text-align: center;
+            margin-top: 160px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .bomb:hover p {
+            opacity: 1;
+        }
