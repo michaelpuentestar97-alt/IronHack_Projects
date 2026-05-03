@@ -1,0 +1,379 @@
+:root {
+  --gray-light: #a5abaf;
+  --gray: #605d5c;
+  --gray-med: #3f3c3a;
+  --gray-dark: #2f2a25;
+  --orange: #d64218;
+  --orange-light: #e85831;
+  --gray-blue: #32373d;
+  --white: #f4f4f4;
+  --glass-bg: rgba(30, 33, 38, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.15);
+}
+
+/* --- RESETEO --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Desplazamiento suave a las secciones */
+}
+
+/* ==========================================
+   2. ESTILOS GENERALES
+   ========================================== */
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--gray-dark);
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(30, 33, 38, 0.85), rgba(47, 42, 37, 0.95)), url("../img/background/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.img-placeholder {
+  background-color: rgba(255, 255, 255, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================
+   3. HEADER / NAV (RESPONSIVO)
+   ========================================== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: var(--glass-bg);
+  border-radius: 50px;
+  border: 1px solid var(--glass-border);
+  margin-bottom: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.accent {
+  color: var(--orange);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--gray-light);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--orange);
+}
+
+/* ==========================================
+   4. HERO SECTION
+   ========================================== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  border-radius: 30px;
+  padding: 50px;
+  border: 1px solid var(--glass-border);
+  margin-bottom: 40px;
+  gap: 45px;
+}
+
+.hero-left {
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-title-line h1 {
+  font-size: 2.5rem;
+  color: var(--white);
+  text-shadow: 2px 2px 4px var(--orange);
+}
+
+.hero-text-line p {
+  color: var(--gray-light);
+  line-height: 1.6;
+}
+
+.btn-info {
+  display: inline-block;
+  background-color: var(--orange);
+  color: var(--white);
+  padding: 15px 45px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-info:hover {
+  background-color: var(--orange-light);
+  transform: translateY(-2px);
+}
+
+.hero-right {
+  flex: 1 1 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-main-img {
+  width: 300px;
+  height: 300px;
+}
+
+.hero-floating-card {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(47, 42, 37, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  color: var(--gray-light);
+  width: 200px;
+  font-size: 0.8rem;
+  z-index: 2;
+}
+
+/* ==========================================
+   5. SECCIÓN DESTACADOS Y CARDS
+   ========================================== */
+.destacados-header {
+  margin-bottom: 30px;
+}
+
+.destacados-header h2 {
+  color: var(--gray-light);
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--orange);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.card {
+  background: var(--glass-bg);
+  border-radius: 25px;
+  padding: 20px;
+  border: 1px solid var(--glass-border);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--orange);
+}
+
+.card-img {
+  height: 160px;
+  margin-bottom: 15px;
+}
+
+.card-line {
+  color: var(--gray-light);
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   6. SECCIÓN ASIMOV & LEYES
+   ========================================== */
+.asimov-container {
+  margin: 60px 0;
+}
+
+.author-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: var(--glass-bg);
+  padding: 30px;
+  border-radius: 20px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.author-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--orange);
+}
+
+.author-info {
+  color: var(--white);
+  flex: 1;
+}
+
+.asimov-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  border-left: 4px solid var(--orange);
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.laws-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.law-card {
+  background: var(--gray-blue);
+  padding: 40px 20px;
+  border-radius: 15px;
+  position: relative;
+  border-bottom: 4px solid var(--orange);
+}
+
+.law-number {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgba(214, 66, 24, 0.2);
+}
+
+.law-card p {
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
+   7. FOOTER
+   ========================================== */
+footer {
+  background: rgba(30, 33, 38, 0.9);
+  padding: 40px 20px;
+  margin-top: 40px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-section h4 {
+  color: var(--white);
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section a {
+  color: var(--gray-light);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section a:hover {
+  color: var(--orange);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  color: var(--gray);
+  font-size: 0.8rem;
+}
+
+/* ==========================================
+   8. MEDIA QUERIES (RESPONSIVE)
+   ========================================== */
+@media (max-width: 850px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero-floating-card {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero {
+    padding: 30px;
+    text-align: center;
+  }
+
+  .btn-info {
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .author-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .asimov-quote {
+    border-left: none;
+    border-top: 2px solid var(--orange);
+    padding: 15px 0;
+  }
+}
