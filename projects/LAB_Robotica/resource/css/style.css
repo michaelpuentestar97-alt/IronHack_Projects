@@ -33,9 +33,11 @@ body {
   background-image: linear-gradient(to bottom, rgba(30, 33, 38, 0.85), rgba(47, 42, 37, 0.95)), url("../img/background/background.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  /* --- FIXED: El pie de página siempre visible o con fondo estático --- */
+  background-attachment: fixed; /* El paisaje de fondo se queda quieto mientras haces scroll[cite: 2] */
   padding: 20px;
 }
+
 
 .container {
   width: 100%;
@@ -62,17 +64,22 @@ body {
 /* ==========================================
    3. HEADER / NAV (RESPONSIVO)
    ========================================== */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background: var(--glass-bg);
-  border-radius: 50px;
+/* --- STICKY: Menú que se queda pegado arriba --- */
+   nav {
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    top: 20px;
+    z-index: 100; /* Superposición máxima para que no lo tapen las cards[cite: 2] */
+     padding: 15px 40px;
+     background: var(--glass-bg);
+     border-radius: 50px;
   border: 1px solid var(--glass-border);
   margin-bottom: 40px;
   backdrop-filter: blur(10px);
 }
+
 
 .logo {
   font-weight: bold;
@@ -105,9 +112,11 @@ nav {
 /* ==========================================
    4. HERO SECTION
    ========================================== */
+   /* --- RELATIVE: Padre de los elementos absolutos --- */
 .hero {
   display: flex;
   flex-wrap: wrap;
+  position: relative; /* Base para el slogan y la card flotante[cite: 2] */
   align-items: center;
   justify-content: space-between;
   background: var(--glass-bg);
@@ -165,6 +174,7 @@ nav {
   height: 300px;
 }
 
+/* --- ABSOLUTE: Elementos ubicados en el fondo o superpuestos --- */
 .hero-floating-card {
   position: absolute;
   left: 0;
@@ -176,7 +186,7 @@ nav {
   color: var(--gray-light);
   width: 200px;
   font-size: 0.8rem;
-  z-index: 2;
+z-index: 10; /* Se superpone a la imagen principal[cite: 2] */
 }
 
 /* ==========================================
@@ -283,6 +293,7 @@ nav {
   font-size: 3rem;
   font-weight: bold;
   color: rgba(214, 66, 24, 0.2);
+  z-index: 0; /* Queda por detrás del texto de la ley[cite: 2] */
 }
 
 .law-card p {
