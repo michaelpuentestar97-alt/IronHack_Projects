@@ -1,0 +1,180 @@
+/* --- 1. VARIABLES --- */
+:root {
+
+  --color-desire: #EA404D;
+  --color-dark-purple: #311131;
+  --color-dark-cerulean: #12447E;
+  --color-medium-persian: #0663AA;
+  --color-rich-electric: #0E92D2;
+
+  --bg-deep: #1a091a;         
+  --text-main: #f4f4f4;        
+  --text-muted: #a5abaf;
+  
+  --desire-glow: rgba(234, 64, 77, 0.4);
+  --desire-dark: #b8202a;
+
+  --glass-bg: rgba(18, 68, 126, 0.3);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* --- 2. RESETEO --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* --- 3. ESTILOS GENERALES --- */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #120812;
+  color: var(--text-main);
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.main-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tittle{
+margin-bottom: 20px;
+display: flex;
+align-self: center;
+text-transform: uppercase;
+text-shadow: 2px 2px 4px var(--color-rich-electric);
+}
+
+
+/* Contenedor de las 4 tarjetas */
+.card-wrapper {
+  display: flex;
+  flex-direction: row; /* Alineación horizontal */
+  flex-wrap: wrap;     /* Responsivo */
+  justify-content: center;
+  gap: 25px;
+  max-width: 1400px;
+  width: 100%;
+}
+
+
+.card-inner{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.character-card {
+ position: relative;
+ width: 380px;
+  height: 200px;
+  background-color: var(--color-dark-purple);
+  background-image: linear-gradient(90deg, rgba(18, 68, 126, 0.3) 0%, transparent 20%);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-dark-cerulean);
+ display: flex;
+  transition: transform 0.3s ease;
+}
+
+.character-card:hover {
+ transform: translateY(-5px);
+  box-shadow: 0 15px 30px var(--desire-glow);
+  border-color: var(--color-desire);
+}
+
+/* Fondo con imagen */
+.card-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.card-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right top;
+  display: block;
+  /* opacity: 0.6; */
+}
+
+/* DEGRADADO DE MEZCLA: Funde la imagen con el color de la tarjeta */
+.overlay-blend {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Crea un fundido de color sólido (izquierda) a transparente (derecha) */
+  background: linear-gradient(90deg, 
+    var(--color-dark-purple) 10%, 
+    rgba(49, 17, 49, 0.8) 20%, 
+    transparent 85%);
+}
+
+.content-box {
+position: relative;
+  z-index: 2;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 85%;
+}
+
+
+.char-name {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 0.7;
+  text-transform: uppercase;
+}
+
+.char-name .last-name {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--color-desire);
+  font-weight: 700;
+}
+
+
+/* Barra lateral*/
+.accent-bar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
