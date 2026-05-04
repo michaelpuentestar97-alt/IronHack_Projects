@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>LAB | Formulario De Contacto</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>LAB | Formulario De Contacto</h1>
+      <div>
+        <form action="Screen/Page2.html" method="get" class="container_form">
+          <label for="name" class="">Nombre</label>
+          <input type="text" name="name" id="name" class="input" />
+
+          <label for="lastname" class="">Apellido*</label>
+          <input type="text" name="lastname" id="lastname" class="input"  required/>
+
+          <label for="age" class="">Edad</label>
+          <input type="number" name="age" id="age" class="input"  min="18" max="120"/>
+
+          <label for="mail" class="">Email *</label>
+          <input type="email" name="mail" id="mail" class="input"  required/>
+
+          <label for="date" class="">Fecha</label>
+          <input type="date" name="date" id="date" class="input"  />
+
+          <label for="case" class="">Asunto*</label>
+          <input type="text" name="case" id="case" class="input"  required/>
+
+          <label for="comment" class="">Comentario</label>
+          <textarea name="comment" id="comment" class="input" ></textarea>
+
+          <div class="btn_container">
+            <input type="submit" class="btn-input" value="Enviar">
+            <input type="reset" class="btn-input" value="Limpiar" >
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+:root {
+    --gray-light: #a5abaf;
+    --gray: #605d5c;
+    --gray-med: #3f3c3a;
+    --gray-dark: #2f2a25;
+    --orange: #d64218;
+    --orange-light: #e85831;
+    --gray-blue: #32373d;
+    --white: #f4f4f4;
+    --glass-bg: rgba(30, 33, 38, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.15);
+}
+
+/* --- RESETEO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Desplazamiento suave a las secciones */
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: var(--white);
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(30, 33, 38, 0.85), rgba(47, 42, 37, 0.95));
+    background-size: cover;
+    background-position: center;
+    /* --- FIXED: El pie de página siempre visible o con fondo estático --- */
+    background-attachment: fixed;
+    /* El paisaje de fondo se queda quieto mientras haces scroll[cite: 2] */
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: red; */
+}
+
+.container_form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 500px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    margin: 10px 0px;
+    background: var(--glass-bg);
+    font-size: 1rem;
+    color: var(--gray-light);
+}
+
+input.input {
+    padding: 15px;
+}
+
+/* Esto sobreescribe a .input solo cuando se trata de un textarea */
+textarea.input {
+    height: 100px;
+    padding: 15px;
+    /* Para que el texto no esté pegado a los bordes */
+    text-align: left;
+    /* Normalmente los textareas quedan mejor alineados a la izquierda */
+    resize: vertical;
+    /* Permite al usuario estirarlo solo hacia abajo si quiere */
+}
+
+.input:hover {
+    border: 1px solid var(--orange-light);
+    transform: translateY(-2px);
+}
+
+label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn_container {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-input {
+    width: 100%;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border: 1px solid var(--glass-border);
+    background-color: var(--orange-light);
+    color: var(--white);
+    padding: 15px 45px;
+    border-radius: 30px;
+    transition: 0.3s;
+
+}
+
+.btn-input:hover {
+    background-color: var(--orange);
+    transform: translateY(-2px);
+}
