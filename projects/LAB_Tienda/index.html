@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pizzería - Pedido</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  
+<form action="mensaje.html" method="GET" class="formulario">
+
+  <h2>🍕 Pedido de Pizza</h2>
+
+  <!-- NOMBRE -->
+  <div class="column">
+      <label>Nombre:</label>
+ <div class="fila">
+    <select name="titulo">
+      <option value="sr">Sr.</option>
+      <option value="sra">Sra.</option>
+      <option value="nb">NB</option>
+    </select>
+
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+  </div>
+  </div>
+ 
+
+  <!-- TELÉFONO -->
+  <div class="column"> 
+       <label>Teléfono:</label>
+       <input type="number" name="telefono" placeholder="Tu teléfono" required>
+   </div>
+  
+
+  <!-- TIPO DE PIZZA -->
+   <div class="column">
+     <label>Tipo de pizza:</label>
+  <select name="pizza">
+    <option value="margarita">Margarita</option>
+    <option value="pepperoni">Pepperoni</option>
+    <option value="barbacoa">Barbacoa</option>
+    <option value="cuatro_quesos">4 Quesos</option>
+    <option value="vegetal">Vegetal</option>
+    <option value="hawaiana">Hawaiana</option>
+  </select>
+   </div>
+ 
+
+  <!-- INGREDIENTES EXTRA -->
+   <div class="column">
+<label>Ingredientes Extras:</label>
+  <div class="opciones">
+    <label><input type="checkbox" name="extras" value="queso"> Queso</label>
+    <label><input type="checkbox" name="extras" value="jamon"> Jamón</label>
+    <label><input type="checkbox" name="extras" value="champiñones"> Champiñones</label>
+    <label><input type="checkbox" name="extras" value="aceitunas"> Aceitunas</label>
+  </div>
+  <label>
+   </div>
+  
+
+
+
+  <!-- ENVÍO -->
+   <div class="column">
+
+<label>Entrega:</label>
+  <div class="opciones">
+    <label><input type="radio" name="entrega" value="domicilio" required> A domicilio</label>
+    <label><input type="radio" name="entrega" value="recoger"> Recoger en tienda</label>
+  </div>
+   </div>
+  
+
+  <!-- COMENTARIO -->
+   <div class="column">
+ <label>Comentario:</label>
+  <textarea name="comentario" placeholder="Ej: sin cebolla..." required></textarea>
+  <button type="submit">Enviar pedido</button>
+   </div>
+ 
+
+</form>
+
+</body>
+</html>
